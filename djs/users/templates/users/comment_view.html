@@ -1,0 +1,15 @@
+{% extends 'my_app/main.html' %}
+
+{% block title %}{{ comments.about }}{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>{{ comments.about }}</h1>
+    <p>{{ comments.title }}</p>
+    <p>{{ comments.full_text }}</p>
+    <p>{{ comments.data }}</p>
+
+    <a href="{% url 'comment-update' comments.id %}" class="btn btn-info">Редагувати</a>
+    <a href="{% url 'comment-delete' comments.id %}" class="btn btn-danger">Видалити</a>
+</div>
+{% endblock %}

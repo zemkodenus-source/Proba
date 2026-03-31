@@ -1,0 +1,12 @@
+{% extends 'my_app/main.html' %}
+
+{% block title %}Головна сторінка{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Головна сторінка</h1>
+    <p>Головне меню</p>
+    {% include 'my_app/left_side.html' %}
+    <button class='btn btn-warning' >Просто кнопка</button>
+</div>
+{% endblock %}

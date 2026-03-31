@@ -1,0 +1,21 @@
+{% extends 'my_app/main.html' %}
+
+{% block title %}Коментарі{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Коментарі від наших клієнтів</h1>
+    {% for el in users_comment %}
+        <div class="alert alert-warning">
+            <h3>{{ el.about }}</h3>
+            <p>{{ el.title }}</p>
+            <p>{{ el.full_text }}</p>
+            <p>{{ el.data }}</p>
+            <a href="{% url 'comment-view' el.id %}" class="btn btn-warning">Читати повністю</a>
+        </div>
+    {% endfor %}
+    <a href="{% url 'add_comment' %}">
+        <li><button class="btn btn-info"><i><i class="fa-solid fa-plus"></i></i>Добавати коментар</button></li>
+    </a>
+</div>
+{% endblock %}

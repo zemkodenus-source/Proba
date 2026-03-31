@@ -1,0 +1,17 @@
+{% extends 'my_app/main.html' %}
+
+{% block title %}Каталог товарів{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Каталог</h1>
+    <p></p>
+    {% include 'my_app/left_side.html' %}
+
+    {% for el in value %}
+    <p>{{ el }}</p>
+    {% endfor %}
+    {{ for_example }}
+    <button class='btn btn-warning' >Просто кнопка</button>
+</div>
+{% endblock %}
